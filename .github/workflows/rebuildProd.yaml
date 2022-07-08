@@ -1,0 +1,14 @@
+name: Rebuild Production
+
+on:
+  workflow_dispatch:
+env:
+  REBUILD_HOOK_URL: ${{ secrets.REBUILD_HOOK_URL }}
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl
+        uses: wei/curl@master
+        with:
+          args: -X POST ${{ secrets.REBUILD_HOOK_URL }}
