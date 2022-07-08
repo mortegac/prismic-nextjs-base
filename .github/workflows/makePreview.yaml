@@ -2,6 +2,9 @@ name: Make Development Previews
 
 on:
   workflow_dispatch:
+env:
+  NETLIFY_NEXT_PLUGIN_SKIP: "true"
+  
 jobs:
   make-preview:
     runs-on: ubuntu-latest
