@@ -1,0 +1,105 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "post",
+    "items": [
+      {
+        "title": "syndicate leading-edge portals",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Dolor excepteur ex cillum non ipsum ex. In in elit fugiat ex est veniam. Laborum Lorem eiusmod in pariatur incididunt sint adipisicing.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "title": "enable seamless experiences",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Excepteur irure ex laboris ex aliqua.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "title": "benchmark sticky e-commerce",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Minim et laboris excepteur amet in ad amet. Cupidatat fugiat do officia eu nulla Lorem ea aliqua est anim. Officia incididunt aliqua ipsum ad laborum.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "title": "engage granular e-business",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Deserunt in pariatur Lorem voluptate laborum.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "title": "scale virtual blockchains",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Incididunt fugiat exercitation ut ullamco eu occaecat est Lorem velit enim consectetur cupidatat do veniam aute. Aliqua excepteur Lorem nulla mollit laboris mollit pariatur occaecat ut nisi amet enim ad.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=900&h=500&fit=crop"
+        }
+      }
+    ],
+    "primary": {}
+  }
+]

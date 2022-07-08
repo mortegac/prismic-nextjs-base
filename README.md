@@ -18,6 +18,19 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Initial Configuration in Prismic.io
+DOC: https://prismic.io/docs/technologies/setup-nextjs
+
+- Install slice machine
+```
+npx @slicemachine/init --repository NAME_REPOSITORY_IN_PRISMIC
+```
+
+- Initialize the configuration executing
+```
+npx @slicemachine/init
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

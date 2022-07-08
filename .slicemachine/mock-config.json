@@ -1,0 +1,12 @@
+{
+  "_cts": {
+    "pages": {}
+  },
+  "slices": {
+    "Post": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}
