@@ -1,5 +1,7 @@
 [build]
-publish = ".next"
+  command   = ""
+  functions = "out_functions"
+  publish   = "out_publish"
 
 [[plugins]]
-package = "@netlify/plugin-nextjs"
+  package = "@netlify/plugin-nextjs"

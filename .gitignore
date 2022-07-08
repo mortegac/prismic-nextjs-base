@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# Netlify build
+out_*
+
 # next.js
 /.next/
 /out/

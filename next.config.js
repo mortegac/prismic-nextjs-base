@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  target: "serverless",
   compiler: {
     styledComponents: true,
   },
