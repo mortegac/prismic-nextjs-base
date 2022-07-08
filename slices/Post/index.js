@@ -16,7 +16,7 @@ const Post = (props) => {
 
                 items.map((item, index) =>
                         <a key={`${id}-${index}`} href="#" className={styles.card}>
-                          {console.log('--item--',item)}
+                          {/* {console.log('--item--',item)} */}
                           <h2>{item.title} &rarr;</h2>
                           
                           <p>{
