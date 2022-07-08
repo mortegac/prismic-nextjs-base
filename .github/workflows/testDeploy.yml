@@ -1,4 +1,4 @@
-name: Main workflow
+name: Deploy using hook
 
 on:
   workflow_dispatch:
