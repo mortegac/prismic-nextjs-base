@@ -3,7 +3,8 @@ name: Make Development Previews
 on:
   workflow_dispatch:
 env:
-  NETLIFY_NEXT_PLUGIN_SKIP: "true"
+  NETLIFY_NEXT_PLUGIN_SKIP: true
+  NEXT_USE_NETLIFY_EDGE: true
   
 jobs:
   make-preview:

@@ -5,6 +5,11 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["images.prismic.io", "images.unsplash.com"],
+    loader: 'akamai',
+    path: '',
+  },
 }
 
 module.exports = nextConfig
