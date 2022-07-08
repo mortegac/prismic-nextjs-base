@@ -5,6 +5,7 @@ on:
 env:
   NETLIFY_NEXT_PLUGIN_SKIP: true
   NEXT_USE_NETLIFY_EDGE: true
+  NEXT_DISABLE_EDGE_IMAGES: true
   
 jobs:
   make-preview:
