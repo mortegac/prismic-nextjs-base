@@ -29,7 +29,11 @@ jobs:
           # cache-dependency-path: subdir/package-lock.json
 
       - name: Install Netlify CLI
-        run: yarn global add netlify-cli
+        # run: yarn global add netlify-cli
+        run: |
+          yarn global add netlify-cli
+          netlify link  --auth=${{ secrets.NETLIFY_TOKEN }} --id ${{ secrets.NETLIFY_SITE_ID }}
+          netlify build --auth=${{ secrets.NETLIFY_TOKEN }}
         
       # - name: Netlify CLI Login
       #   run: netlify deploy --auth $NETLIFY_AUTH_TOKEN
@@ -44,10 +48,10 @@ jobs:
       - name: 🧰 Install dependencies
         run: yarn install --frozen-lockfile # optional, --immutable
 
-      - name: 🧰 Install netlify
-        run: |
-          npx netlify link  --auth=${{ secrets.NETLIFY_TOKEN }} --id ${{ secrets.NETLIFY_SITE_ID }}
-          npx netlify build --auth=${{ secrets.NETLIFY_TOKEN }}
+      # - name: 🧰 Install netlify
+      #   run: |
+      #     npx netlify link  --auth=${{ secrets.NETLIFY_TOKEN }} --id ${{ secrets.NETLIFY_SITE_ID }}
+      #     npx netlify build --auth=${{ secrets.NETLIFY_TOKEN }}
         # run: npm ci
 
       - name: 📦 Build project
