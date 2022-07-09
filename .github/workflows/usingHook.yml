@@ -7,16 +7,17 @@ jobs:
   preview-netlify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: 🙈 Checkout code
         uses: actions/checkout@v3
       
-      # - name: 📬 Caching
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: |
-      #       **/node_modules
-      #       ${{ github.workspace }}/.next/cache
-      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: 📬 Caching
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          # key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lockk.json') }}
 
       - name: 🏁 Use Node.js 16.x
         uses: actions/setup-node@v3
@@ -27,8 +28,8 @@ jobs:
           # cache: 'npm'
           # cache-dependency-path: subdir/package-lock.json
 
-      - name: Install Netlify CLI
-        run: yarn global add netlify-cli
+      # - name: Install Netlify CLI
+      #   run: yarn global add netlify-cli
 
       - name: 🧰 Install dependencies
         run: yarn install --frozen-lockfile # optional, --immutable
@@ -41,7 +42,7 @@ jobs:
       - name: 🚀 Publish
         uses: netlify/actions/cli@master
         with:
-          args: deploy --dir=site --functions=functions
+          args: deploy --dir=.next --functions=functions
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
