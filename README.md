@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 [![Main workflow](https://github.com/mortegac/prismic-nextjs-base/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/mortegac/prismic-nextjs-base/actions/workflows/main.yml)
 
+
 ## Getting Started
 
 First, run the development server:
