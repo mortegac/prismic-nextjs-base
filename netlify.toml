@@ -1,6 +1,8 @@
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# ./netlify.toml
 
 [build]
-command = “npm run build:web”
-publish = “packages/web/out”
+  command = "yarn build"
+  publish = "packages/web/out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
