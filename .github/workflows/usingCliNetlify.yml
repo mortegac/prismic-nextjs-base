@@ -41,11 +41,11 @@ jobs:
       #     npx netlify build --auth=${{ secrets.NETLIFY_TOKEN }}          
 
 
-
       - name: 🧰 Install dependencies
-        # run: yarn install --frozen-lockfile # optional, --immutable
+        run: yarn install --frozen-lockfile # optional, --immutable
+
+      - name: 🧰 Install netlify
         run: |
-          yarn install --frozen-lockfile 
           npx netlify link  --auth=${{ secrets.NETLIFY_TOKEN }} --id ${{ secrets.NETLIFY_SITE_ID }}
           npx netlify build --auth=${{ secrets.NETLIFY_TOKEN }}
         # run: npm ci
