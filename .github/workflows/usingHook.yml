@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+      
       # - name: 📬 Caching
       #   uses: actions/cache@v3
       #   with:
@@ -18,7 +18,7 @@ jobs:
       #       ${{ github.workspace }}/.next/cache
       #     key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Use Node.js 16.x
+      - name: 🏁 Use Node.js 16.x
         uses: actions/setup-node@v3
         with:
           # node-version: '16'
@@ -34,6 +34,7 @@ jobs:
       - name: 📦 Build project
         run: yarn build
         
+        
 
       # - name: 🧹 Run lint
       #   run: npm run lint
@@ -45,8 +46,14 @@ jobs:
       #   run: netlify deploy --build
         
       # Deploy to Netlify with a personalized message
-      - name: 🚀 Deploy to Netlify
-        run: curl -X POST -d {} ${{ secrets.NETLIFY_HOOK }}
+      - name: Publish
+        uses: netlify/actions/build@master
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # - name: 🚀 Deploy to Netlify
+      #   run: curl -X POST -d {} ${{ secrets.NETLIFY_HOOK }}
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
