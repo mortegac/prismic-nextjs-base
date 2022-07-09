@@ -3,9 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   compiler: {
+    removeConsole: true,
     styledComponents: true,
   },
-  distDir:".next",
+  distDir:"./dist/",
   images: {
     domains: ["images.prismic.io", "images.unsplash.com"],
     loader: 'akamai',
