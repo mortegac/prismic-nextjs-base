@@ -30,6 +30,14 @@ jobs:
 
       # - name: Install Netlify CLI
       #   run: yarn global add netlify-cli
+        
+      # - name: Build the site & install dependicies
+      #   run: |
+      #     yarn install
+      #     npx netlify link  --auth=${{ secrets.NETLIFY_TOKEN }} --id ${{ secrets.SITE_ID }}
+      #     npx netlify build --auth=${{ secrets.NETLIFY_TOKEN }}          
+
+
 
       - name: 🧰 Install dependencies
         run: yarn install --frozen-lockfile # optional, --immutable
@@ -44,7 +52,7 @@ jobs:
         uses: netlify/actions/cli@master
         with:
           # args: deploy --dir=.next --functions=functions
-          args: deploy -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
+          args: deploy deploy --dir=.next --prod -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
