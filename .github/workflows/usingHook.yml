@@ -23,7 +23,7 @@ jobs:
         with:
           # node-version: '16'
           node-version: 16.x
-          cache: 'yarn'
+          # cache: 'yarn'
           # cache: 'npm'
           # cache-dependency-path: subdir/package-lock.json
 
@@ -32,7 +32,7 @@ jobs:
         # run: npm ci
 
       - name: 📦 Build project
-        run: yarn build --if-present
+        run: yarn build
         
 
       # - name: 🧹 Run lint
