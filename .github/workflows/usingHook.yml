@@ -28,7 +28,7 @@ jobs:
           # cache-dependency-path: subdir/package-lock.json
 
       - name: 🧰 Install dependencies
-      - run: yarn install --frozen-lockfile # optional, --immutable
+        run: yarn install --frozen-lockfile # optional, --immutable
         # run: npm ci
 
       - name: 📦 Build project
