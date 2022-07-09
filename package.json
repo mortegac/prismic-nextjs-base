@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
+    "export": "next build && next export -o ./dist",
     "lint": "next lint",
     "sl": "start-slicemachine",
     "slicemachine": "start-slicemachine"
@@ -22,7 +23,6 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.11.1",
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.1",
     "slice-machine-ui": "^0.4.0"
