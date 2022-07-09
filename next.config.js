@@ -5,6 +5,7 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  distDir:".next",
   images: {
     domains: ["images.prismic.io", "images.unsplash.com"],
     loader: 'akamai',

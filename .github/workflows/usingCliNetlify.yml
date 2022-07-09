@@ -1,0 +1,85 @@
+name: Deploy using Netlify CLI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  preview-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🙈 Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 📬 Caching
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          # key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lockk.json') }}
+
+      - name: 🏁 Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          # node-version: '16'
+          node-version: 16.x
+          # cache: 'yarn'
+          # cache: 'npm'
+          # cache-dependency-path: subdir/package-lock.json
+
+      - name: Install Netlify CLI
+        run: yarn global add netlify-cli
+        
+      - name: Install Netlify CLI
+        run: netlify deploy --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        
+      # - name: Build the site & install dependicies
+      #   run: |
+      #     yarn install
+      #     npx netlify link  --auth=${{ secrets.NETLIFY_TOKEN }} --id ${{ secrets.SITE_ID }}
+      #     npx netlify build --auth=${{ secrets.NETLIFY_TOKEN }}          
+
+
+
+      - name: 🧰 Install dependencies
+        run: yarn install --frozen-lockfile # optional, --immutable
+        # run: npm ci
+
+      - name: 📦 Build project
+        run: yarn build
+        
+        
+      - name: 🚀 Publish
+        run: netlify deploy --build --context deploy-preview
+      # - name: 🚀 Publish
+      #   id: deploy-netlify
+      #   uses: netlify/actions/cli@master
+      #   with:
+      #     # args: deploy --dir=.next --functions=functions
+      #     args: deploy deploy --dir=.next --prod -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
+      #     secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+      #   env:
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      # - name: 🧹 Run lint
+      #   run: npm run lint
+
+      # - name: 🐛 Run tests
+      #   run: npm run test
+
+      # - name: 🚀 test - Deploy to Netlify
+      #   run: netlify deploy --build
+        
+      # Deploy to Netlify with a personalized message
+      # - name: 🚀 Publish
+      #   uses: netlify/actions/build@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # - name: 🚀 Deploy to Netlify
+      #   run: curl -X POST -d {} ${{ secrets.NETLIFY_HOOK }}
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
