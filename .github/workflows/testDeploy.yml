@@ -31,13 +31,14 @@ jobs:
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       - name: 🧰 Install dependencies
         run: npm ci
 
       - name: 📦 Build project
         run: npm run build --if-present
+        
 
       # - name: 🧹 Run lint
       #   run: npm run lint
@@ -45,6 +46,9 @@ jobs:
       # - name: 🐛 Run tests
       #   run: npm run test
 
+      # - name: 🚀 test - Deploy to Netlify
+      #   run: netlify deploy --build
+        
       # Deploy to Netlify with a personalized message
       - name: 🚀 Deploy to Netlify
         run: curl -X POST -d {} ${{ secrets.NETLIFY_HOOK }}
