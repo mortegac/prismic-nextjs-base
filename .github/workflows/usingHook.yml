@@ -52,7 +52,8 @@ jobs:
         uses: netlify/actions/cli@master
         with:
           # args: deploy --dir=.next --functions=functions
-          args: deploy deploy --dir=.next --prod -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
+          # args: deploy deploy --dir=.next --prod -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
+          args: npx netlify-cli deploy --dir=dist --prodIfUnlocked
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
