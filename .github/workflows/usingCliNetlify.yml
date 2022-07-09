@@ -31,9 +31,9 @@ jobs:
       - name: Install Netlify CLI
         run: yarn global add netlify-cli
         
-      - name: Install Netlify CLI
-        run: netlify deploy --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        
+      # - name: Netlify CLI Login
+      #   run: netlify deploy --auth $NETLIFY_AUTH_TOKEN
+
       # - name: Build the site & install dependicies
       #   run: |
       #     yarn install
@@ -51,7 +51,11 @@ jobs:
         
         
       - name: 🚀 Publish
-        run: netlify deploy --build --context deploy-preview
+        # run: netlify deploy --build --context deploy-preview
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: netlify deploy --dir=public --prod
       # - name: 🚀 Publish
       #   id: deploy-netlify
       #   uses: netlify/actions/cli@master
