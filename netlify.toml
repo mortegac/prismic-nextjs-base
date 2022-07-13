@@ -1,8 +1,2 @@
-# ./netlify.toml
-
-[build]
-  command = "yarn build"
-  publish = "packages/web/out"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[functions]
+included_files = ["content/**"]

@@ -49,3 +49,40 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## DEFINITION
+
+- ISR = Incremental Static Site Generator
+(Regeneración estática incremental)
+`getStaticPropses` un hermano getStaticPaths y se utiliza en generación estática. Es una función asíncrona en la que puede obtener datos externos y devolverlos como apoyo al componente predeterminado en una página. Los datos se devuelven como un objeto de PROPS y se asignan implícitamente al accesorio del componente de exportación predeterminado en la página.
+
+`getStaticPaths` Similar a getStaticProps, getStaticPathsse usa en generación estática pero es diferente en que son las rutas de su página las que son dinámicas, no el contenido de su página. Esto se usa a menudo con getStaticPropsporque no devuelve ningún dato a su componente en sí, sino que devuelve las rutas que deben renderizarse previamente en el momento de la compilación. Con el conocimiento de las rutas, puede continuar para obtener el contenido de la página correspondiente .
+
+- SSG = Static Site Generator
+
+- SSR = Server Side Rendered
+
+
+## CONSIDERACIONES
+
+- Al usar nextjs AUTOHOSPEDADO se debe configurar `sharp` para optimizar imágenes en un ambiente productivo
+  ```bash
+    npm install sharp
+  ```
+  Configuracion para evitar uso esxecivo de memoria
+  https://sharp.pixelplumbing.com/install#linux-memory-allocator
+
+## Exportación de HTML estático
+
+Este comando permite generar las páginas estáticas del proyecto nextjs.  Estas páginas se generan en una carpeta ./out
+
+- Agregar al package.json
+```javascript
+"scripts": {
+  "build": "next build && next export"
+}
+```
+La ejecución npm run buildgenerará un outdirectorio.
+
+`next export` construye una versión HTML de su aplicación. Durante `next build`, `getStaticPropsy` `getStaticPaths` generará un archivo HTML para cada página en su pages directorio (o más para rutas dinámicas ). Luego, `next export ` copiará los archivos ya exportados en el directorio correcto. `getInitialProps` generará los archivos HTML durante `next export` en lugar de `next build`.

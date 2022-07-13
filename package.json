@@ -4,12 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o ./dist",
+    "build": "next build && next export",
+    "build:static": "next build && next export",
     "start": "next start",
     "export": "next build && next export -o ./dist",
     "lint": "next lint",
     "sl": "start-slicemachine",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "devssr": "node server.js",
+    "buildssr": "next build",
+    "startssr": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@prismicio/client": "^6.6.1",
