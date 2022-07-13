@@ -1,2 +1,8 @@
 [functions]
 included_files = ["content/**"]
+
+[build]
+publish = ".next"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
