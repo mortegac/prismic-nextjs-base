@@ -7,7 +7,6 @@ const nextConfig = {
     removeConsole: true,
     styledComponents: true,
   },
-  distDir:"./dist/",
   images: {
     domains: ["images.prismic.io", "images.unsplash.com"],
     loader: 'akamai',
