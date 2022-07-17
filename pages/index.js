@@ -33,7 +33,7 @@ export default function Home({pages, time}) {
 
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Ejempo usando <a href="https://nextjs.org">Next.js!</a> y <a href="https://prismic.io">Prismic!</a>
+            Uso de <a href="https://nextjs.org">Next.js!</a> y <a href="https://prismic.io">Prismic!</a>
           </h1>
           <h3>{time}</h3>
 
