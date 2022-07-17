@@ -86,3 +86,11 @@ Este comando permite generar las páginas estáticas del proyecto nextjs.  Estas
 La ejecución npm run buildgenerará un outdirectorio.
 
 `next export` construye una versión HTML de su aplicación. Durante `next build`, `getStaticPropsy` `getStaticPaths` generará un archivo HTML para cada página en su pages directorio (o más para rutas dinámicas ). Luego, `next export ` copiará los archivos ya exportados en el directorio correcto. `getInitialProps` generará los archivos HTML durante `next export` en lugar de `next build`.
+
+
+## Regeneración estática incremental
+Next.js le permite crear o actualizar páginas estáticas después de haber creado su sitio. La regeneración estática incremental (ISR) le permite usar la generación estática por página, sin necesidad de reconstruir todo el sitio . Con ISR, puede conservar los beneficios de la estática mientras escala a millones de páginas.
+
+Para usar ISR, agregue el revalidateaccesorio a getStaticProps:
+
+
